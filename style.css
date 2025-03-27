@@ -1,0 +1,399 @@
+:root {
+    --fundo-claro0: #91ddd096; 
+    --fundo-claro: #f1ede5fd;/*nao mexer*/
+    --fundo-claro2:#dd91d99f; 
+    --fundo-claro3:#08d3969f; 
+    --rosa-claro: #f7f9f2c9;
+    --rosa-claro2: #e8c5e5ab;
+    --rosa: #f19ed3e1;/*nao mexer*/
+    --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos Gerais */
+body {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333; /* Cor padrão para textos */
+}
+
+/* Header */
+header {
+    background-color: var(--rosa-claro);
+    padding: 20px 0;
+    box-shadow: var(--sombra);
+    text-align: center;
+}
+
+.logo-container {
+    background-color: var(--fundo-claro2);
+    padding: 15px;
+    border-radius: 20px;
+    display: inline-block;
+    margin: 0 auto;
+    box-shadow: var(--sombra);
+}
+
+header img {
+    width: 180px;
+    height: auto;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+header img:hover {
+    transform: scale(1.05);
+}
+
+h1 {
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 2.5rem;
+    color: var(--rosa);
+    margin-top: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Navegação */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--rosa);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+    color: #9d296a;
+    transform: translateY(-2px);
+}
+
+nav a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: var(--fundo-claro);
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Seções */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    padding: 80px 0;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#sobre {
+    background-color: var(--fundo-claro);
+}
+
+#servicos {
+    background-color: var(--rosa-claro2);
+}
+
+#portfolio {
+    background-color: var(--fundo-claro0);
+}
+
+#contato, footer {
+    background-color: var(--rosa);
+}
+
+/* Carrossel do Portfólio */
+#carouselPortfolio .carousel-item img {
+    height: 40vh;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: var(--sombra);
+}
+
+.carousel-control-prev, .carousel-control-next {
+    width: 5%;
+}
+
+/* Botões */
+.btn-pink-dark {
+    background-color: var(--fundo-claro3);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 18px;
+    color: white;
+    box-shadow: var(--sombra);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-pink-dark:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.btn-pink-dark:active {
+    transform: scale(0.95);
+}
+
+.btn-pink-dark .fa-whatsapp {
+    margin-right: 10px;
+}
+
+/* Footer */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    font-size: 24px;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    color: var(--fundo-claro);
+}
+
+
+.social-icon .fa-facebook-f { color: #1877F2; }
+.social-icon .fa-envelope { color: #D44638; }
+
+.social-icon:hover .fa-facebook-f,
+.social-icon:hover .fa-envelope {
+    color: var(--fundo-claro);
+}
+
+/* Sobre */
+.sobre-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.sobre-foto {
+    flex: 1;
+    max-width: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    transition: transform 0.3s ease;
+}
+
+.sobre-foto img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.sobre-foto:hover {
+    transform: scale(1.05);
+}
+
+.sobre-texto {
+    flex: 2;
+}
+
+.sobre-texto h2 {
+    font-size: 2.5rem;
+    color: var(--rosa);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sobre-texto p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.sobre-destaque {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.sobre-destaque i {
+    font-size: 24px;
+    color: var(--rosa);
+}
+
+.sobre-destaque span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Serviços */
+#servicos {
+    background-color: var(--rosa-claro2);
+    padding: 80px 0;
+}
+
+#servicos h2 {
+    font-size: 2.5rem;
+    color: var(--rosa);
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.servicos-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Permite que os cards quebrem em várias linhas */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.servico-card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    width: 300px;
+    box-shadow: var(--sombra);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servico-card:hover {
+    transform: translateY(-10px); /* Efeito de levantar ao passar o mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
+}
+
+.servico-card i {
+    font-size: 48px;
+    color: var(--rosa);
+    margin-bottom: 20px;
+}
+
+.servico-card h3 {
+    font-size: 1.5rem;
+    color: var(--rosa);
+    margin-bottom: 15px;
+}
+
+.servico-card p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .servico-card {
+        width: 100%; /* Cards ocupam a largura total em telas pequenas */
+    }
+}
+/* Carrossel de Serviços */
+.carousel-servicos {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+.carousel-item .servicos-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--rosa);
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-control-prev:hover, .carousel-control-next:hover {
+    background-color: var(--fundo-claro);
+}
+
+.carousel-control-prev {
+    left: -40px;
+}
+
+.carousel-control-next {
+    right: -40px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .sobre-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sobre-foto {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .sobre-destaque {
+        justify-content: center;
+    }
+
+    .servico-card {
+        width: 100%;
+    }
+
+    .carousel-control-prev {
+        left: 10px;
+    }
+
+    .carousel-control-next {
+        right: 10px;
+    }
+}
