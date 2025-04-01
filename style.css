@@ -202,7 +202,7 @@ section.visible {
 
 .sobre-foto {
     flex: 1;
-    max-width: 300px;
+    max-width: 350px;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: var(--sombra);
@@ -210,7 +210,7 @@ section.visible {
 }
 
 .sobre-foto img {
-    width: 100%;
+    width: 350px;
     height: auto;
     display: block;
 }
